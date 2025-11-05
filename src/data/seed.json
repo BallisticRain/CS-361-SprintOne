@@ -1,0 +1,76 @@
+{
+  "games": [
+    {
+      "id": "g1",
+      "title": "Skybound",
+      "genre": "Platformer",
+      "platforms": ["PC"],
+      "accessibility": {
+        "subtitles": true,
+        "colorblind": false,
+        "controllerRemap": true
+      },
+      "description": "A high-flying platformer with dynamic movement mechanics and vibrant art style."
+    },
+    {
+      "id": "g2",
+      "title": "Mystic Quest",
+      "genre": "RPG",
+      "platforms": ["PC", "Switch"],
+      "accessibility": {
+        "subtitles": true,
+        "colorblind": true,
+        "controllerRemap": true
+      },
+      "description": "An epic role-playing adventure with deep story and customizable characters."
+    },
+    {
+      "id": "g3",
+      "title": "Speed Racers",
+      "genre": "Racing",
+      "platforms": ["PC", "PS5", "Xbox"],
+      "accessibility": {
+        "subtitles": false,
+        "colorblind": true,
+        "controllerRemap": true
+      },
+      "description": "High-octane racing with realistic physics and dynamic weather systems."
+    },
+    {
+      "id": "g4",
+      "title": "Strategy Empire",
+      "genre": "Strategy",
+      "platforms": ["PC"],
+      "accessibility": {
+        "subtitles": true,
+        "colorblind": true,
+        "controllerRemap": false
+      },
+      "description": "Build and manage your empire through the ages in this deep strategy game."
+    },
+    {
+      "id": "g5",
+      "title": "Puzzle Masters",
+      "genre": "Puzzle",
+      "platforms": ["PC", "Mobile"],
+      "accessibility": {
+        "subtitles": false,
+        "colorblind": true,
+        "controllerRemap": false
+      },
+      "description": "Brain-teasing puzzles that challenge your logic and creativity."
+    },
+    {
+      "id": "g6",
+      "title": "Survival Island",
+      "genre": "Survival",
+      "platforms": ["PC", "PS5"],
+      "accessibility": {
+        "subtitles": true,
+        "colorblind": false,
+        "controllerRemap": true
+      },
+      "description": "Survive in a procedurally generated island with dynamic ecosystems."
+    }
+  ]
+}
