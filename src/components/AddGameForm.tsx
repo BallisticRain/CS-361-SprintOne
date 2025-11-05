@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AddGameFormProps, Game } from './types';
 
 const AddGameForm = ({ onAdd, onClose, isHighContrast }: AddGameFormProps) => {
@@ -34,14 +34,36 @@ const AddGameForm = ({ onAdd, onClose, isHighContrast }: AddGameFormProps) => {
 
   const availablePlatforms = ['PC', 'PS5', 'Xbox', 'Switch', 'Mobile'];
 
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className={`rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto ${
-        isHighContrast ? 'bg-black border-2 border-white' : 'bg-white'
-      }`}>
-        <h2 className={`text-2xl font-bold mb-4 ${
-          isHighContrast ? 'text-white' : ''
-        }`}>Add New Game</h2>
+      <div 
+        className={`rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto ${
+          isHighContrast ? 'bg-black border-2 border-white' : 'bg-white'
+        }`}
+        role="dialog"
+        aria-labelledby="add-game-title"
+        aria-modal="true"
+      >
+        <h2 
+          id="add-game-title"
+          className={`text-2xl font-bold mb-4 ${
+            isHighContrast ? 'text-white' : ''
+          }`}
+        >
+          Add New Game
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="title" className={`block mb-2 ${isHighContrast ? 'text-white' : ''}`}>

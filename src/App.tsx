@@ -63,6 +63,24 @@ function App() {
     }
   }, [isHighContrast]);
 
+  // Keyboard navigation - press 'n' to open Add Game form
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'n' || event.key === 'N') {
+        // Only trigger if not typing in an input field
+        if (!(event.target instanceof HTMLInputElement) && 
+            !(event.target instanceof HTMLTextAreaElement) && 
+            !(event.target instanceof HTMLSelectElement)) {
+          event.preventDefault();
+          setShowAddGame(true);
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className={`min-h-screen p-4 ${isLargeText ? 'text-lg' : 'text-base'} ${isHighContrast ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <header className="mb-8">
